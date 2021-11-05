@@ -2,10 +2,8 @@ package com.example.hopskipdrivecodingchallenge.adapters
 
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.BindingAdapter
 import com.example.hopskipdrivecodingchallenge.R
-import com.example.hopskipdrivecodingchallenge.data.Passenger
 import com.example.hopskipdrivecodingchallenge.data.Ride
 import com.example.hopskipdrivecodingchallenge.data.RidesDay
 import com.example.hopskipdrivecodingchallenge.data.Waypoint
