@@ -76,15 +76,9 @@ class RideDetailsFragment: Fragment(), OnMapReadyCallback {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-    }
-
-    override fun onMapReady(map: GoogleMap?) {
+    override fun onMapReady(map: GoogleMap) {
         val ride = model.selectedRide.value!!
-        map!!.apply {
+        map.apply {
             val start = ride.orderedWaypoints[0].location
             val end = ride.orderedWaypoints[1].location
             val startPosition = LatLng(start.lat, start.lng)
