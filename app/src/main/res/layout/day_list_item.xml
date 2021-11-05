@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="ridesDay"
+            type="com.example.hopskipdrivecodingchallenge.data.RidesDay" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/top_divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_divider"
+            app:layout_constraintBottom_toBottomOf="@id/price_text"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            app:dateText="@{ridesDay}"/>
+
+        <TextView
+            android:id="@+id/time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/date_text"
+            app:layout_constraintTop_toBottomOf="@id/top_divider"
+            app:layout_constraintBottom_toBottomOf="@id/price_text"
+            android:gravity="center"
+            app:timeText="@{ridesDay}"
+            />
+
+        <TextView
+            android:id="@+id/estimated_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/top_divider"
+            app:layout_constraintRight_toRightOf="@id/price_text"
+            android:text="@string/estimated"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/estimated_text"
+            style="@style/priceStyle"
+            app:priceText="@{ridesDay}"/>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/bottom_divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/price_text"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rides_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/bottom_divider"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

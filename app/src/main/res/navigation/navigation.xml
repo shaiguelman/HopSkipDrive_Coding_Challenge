@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/rideListFragment">
+    <fragment
+        android:id="@+id/rideListFragment"
+        android:name="com.example.hopskipdrivecodingchallenge.fragments.RideListFragment"
+        android:label="My Rides" >
+        <action
+            android:id="@+id/actionRideListFragment_to_rideDetailsFragment"
+            app:destination="@id/rideDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rideDetailsFragment"
+        android:name="com.example.hopskipdrivecodingchallenge.fragments.RideDetailsFragment"
+        android:label="RideDetailsFragment" >
+        <action
+            android:id="@+id/action_rideDetailsFragment_to_rideListFragment"
+            app:destination="@id/rideListFragment" />
+    </fragment>
+
+</navigation>

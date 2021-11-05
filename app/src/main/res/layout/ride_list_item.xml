@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="ride"
+            type="com.example.hopskipdrivecodingchallenge.data.Ride" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ride_card"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:clickable="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/price_text"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                app:timeText="@{ride}"/>
+
+            <TextView
+                android:id="@+id/riders_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/time_text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/price_text"
+                android:gravity="center"
+                app:ridersText="@{ride}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@+id/price_text"
+                app:layout_constraintBottom_toBottomOf="@id/price_text"
+                android:text="@string/est"
+                style="@style/textBlue"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:id="@+id/price_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/priceStyle"
+                app:priceText="@{ride}"/>
+
+            <TextView
+                android:id="@+id/addresses_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/time_text"
+                app:layout_constraintTop_toBottomOf="@id/price_text"
+                android:layout_marginTop="10dp"
+                app:addressesText="@{ride}"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
