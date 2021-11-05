@@ -21,6 +21,9 @@ ___________________
 2. Did not include full action bar functionality.
 
 3. Included APK file in top level of Git repository.
+
+4. MAPS_API_KEY must be added to local.properties file or directly 
+to manifest file.
 ___________________
 
 
